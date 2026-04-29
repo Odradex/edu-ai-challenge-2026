@@ -1,0 +1,409 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Alex Johnson",
+      "role": "Principal Engineer (US.T1.D2.G1)",
+      "activities": [
+        { "name": "[EDU] GitHub Copilot Workshop", "category": "Public Speaking", "date": "17-Dec-2025", "points": 64 },
+        { "name": "[EDU] AI Digest #15", "category": "Public Speaking", "date": "15-Dec-2025", "points": 16 },
+        { "name": "[EDU] Clean Code Seminar", "category": "Education", "date": "10-Nov-2025", "points": 32 },
+        { "name": "[EDU] University Guest Lecture", "category": "University Partnership", "date": "05-Mar-2025", "points": 40 }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Maria Santos",
+      "role": "Group Manager (EU.U2.G1)",
+      "activities": [
+        { "name": "[EDU] PowerPoint Karaoke #3", "category": "Public Speaking", "date": "16-Dec-2025", "points": 8 },
+        { "name": "[EDU] Architecture Review Talk", "category": "Public Speaking", "date": "20-Nov-2025", "points": 32 },
+        { "name": "[EDU] React Workshop Series", "category": "Education", "date": "15-Oct-2025", "points": 48 },
+        { "name": "[EDU] Mentorship Program Q3", "category": "Education", "date": "30-Sep-2025", "points": 24 },
+        { "name": "[EDU] Tech Blog Post", "category": "Education", "date": "12-Jun-2025", "points": 16 },
+        { "name": "[EDU] University Fair Presentation", "category": "University Partnership", "date": "22-Feb-2025", "points": 20 }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "David Kim",
+      "role": "Lead QA Engineer (AS.U1.D1.G2.T1)",
+      "activities": [
+        { "name": "[EDU] Testing Best Practices Talk", "category": "Education", "date": "10-Dec-2025", "points": 32 },
+        { "name": "[EDU] QA Automation Workshop", "category": "Education", "date": "05-Nov-2025", "points": 48 },
+        { "name": "[EDU] Cypress Deep Dive", "category": "Education", "date": "18-Sep-2025", "points": 24 },
+        { "name": "[EDU] University Internship Day", "category": "University Partnership", "date": "14-Apr-2025", "points": 20 }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Priya Patel",
+      "role": "Senior Software Engineer (IN.U1.D3.G1)",
+      "activities": [
+        { "name": "[EDU] AI Panel Discussion", "category": "Public Speaking", "date": "06-Oct-2025", "points": 16 },
+        { "name": "[EDU] Machine Learning 101", "category": "Education", "date": "22-Sep-2025", "points": 32 },
+        { "name": "[EDU] Python for Engineers", "category": "Education", "date": "10-Jul-2025", "points": 24 }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "James O'Brien",
+      "role": "DevOps Engineer (IE.U1.G2)",
+      "activities": [
+        { "name": "[EDU] Kubernetes Workshop", "category": "Education", "date": "01-Dec-2025", "points": 40 },
+        { "name": "[EDU] CI/CD Pipeline Talk", "category": "Public Speaking", "date": "14-Oct-2025", "points": 16 },
+        { "name": "[EDU] Docker Fundamentals", "category": "Education", "date": "08-Aug-2025", "points": 24 }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Lena Müller",
+      "role": "Marketing Manager (DE.Growth.DExp.Brand)",
+      "activities": [
+        { "name": "[EDU] Brand Strategy Talk", "category": "Public Speaking", "date": "20-Nov-2025", "points": 16 },
+        { "name": "[EDU] University Career Fair", "category": "University Partnership", "date": "10-Oct-2025", "points": 20 },
+        { "name": "[EDU] Content Marketing Seminar", "category": "Education", "date": "15-Sep-2025", "points": 24 }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Carlos Rivera",
+      "role": "Software Engineer (MX.U1.D2.G1)",
+      "activities": [
+        { "name": "[EDU] GraphQL Workshop", "category": "Education", "date": "12-Nov-2025", "points": 32 },
+        { "name": "[EDU] Open Source Contribution Talk", "category": "Public Speaking", "date": "03-Sep-2025", "points": 16 }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Olena Kovalenko",
+      "role": "Senior Business Analyst (UA.U1.G3)",
+      "activities": [
+        { "name": "[EDU] Agile Retrospective Facilitation", "category": "Education", "date": "25-Nov-2025", "points": 24 },
+        { "name": "[EDU] University Partnership Lecture", "category": "University Partnership", "date": "18-Mar-2025", "points": 20 },
+        { "name": "[EDU] Requirements Workshop", "category": "Education", "date": "07-Feb-2025", "points": 16 }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Noah Bergström",
+      "role": "Frontend Developer (SE.U1.D1.G1)",
+      "activities": [
+        { "name": "[EDU] Accessibility in Web Apps", "category": "Public Speaking", "date": "08-Dec-2025", "points": 16 },
+        { "name": "[EDU] CSS Architecture Talk", "category": "Education", "date": "29-Oct-2025", "points": 24 }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Fatima Al-Hassan",
+      "role": "Data Engineer (AE.U1.D2.G1)",
+      "activities": [
+        { "name": "[EDU] University Partnership Summit", "category": "University Partnership", "date": "15-Nov-2025", "points": 20 }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Sophie Leclerc",
+      "role": "Product Manager (FR.U1.G1)",
+      "activities": [
+        { "name": "[EDU] Product Thinking Workshop", "category": "Education", "date": "18-Mar-2026", "points": 32 },
+        { "name": "[EDU] OKR Framework Talk", "category": "Public Speaking", "date": "04-Feb-2026", "points": 16 },
+        { "name": "[EDU] Roadmap Planning Session", "category": "Education", "date": "12-Jan-2026", "points": 24 }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Dmitri Volkov",
+      "role": "Senior Backend Engineer (RU.U1.D1.G2)",
+      "activities": [
+        { "name": "[EDU] Microservices Deep Dive", "category": "Public Speaking", "date": "22-Jan-2026", "points": 32 },
+        { "name": "[EDU] gRPC Workshop", "category": "Education", "date": "10-Dec-2025", "points": 24 },
+        { "name": "[EDU] PostgreSQL Tuning Talk", "category": "Public Speaking", "date": "05-Oct-2025", "points": 16 }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Yuki Tanaka",
+      "role": "UX Designer (JP.U1.D1.G1)",
+      "activities": [
+        { "name": "[EDU] Design Systems Talk", "category": "Public Speaking", "date": "14-Apr-2026", "points": 16 },
+        { "name": "[EDU] Figma Advanced Workshop", "category": "Education", "date": "25-Feb-2026", "points": 32 },
+        { "name": "[EDU] University Design Mentoring", "category": "University Partnership", "date": "08-Jan-2026", "points": 20 }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Amara Osei",
+      "role": "Engineering Manager (GH.U1.G2)",
+      "activities": [
+        { "name": "[EDU] Leadership in Tech Talk", "category": "Public Speaking", "date": "20-Nov-2025", "points": 32 },
+        { "name": "[EDU] 1-on-1s That Work", "category": "Education", "date": "15-Aug-2025", "points": 24 },
+        { "name": "[EDU] University Recruitment Drive", "category": "University Partnership", "date": "12-May-2025", "points": 20 }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Elena Popescu",
+      "role": "QA Engineer (RO.U1.D2.G1)",
+      "activities": [
+        { "name": "[EDU] Playwright Workshop", "category": "Education", "date": "18-Sep-2025", "points": 32 },
+        { "name": "[EDU] Bug Bash Facilitation", "category": "Public Speaking", "date": "22-Jul-2025", "points": 8 },
+        { "name": "[EDU] University QA Talk", "category": "University Partnership", "date": "14-Apr-2025", "points": 20 }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Ravi Krishnamurthy",
+      "role": "Data Scientist (IN.U2.D1.G1)",
+      "activities": [
+        { "name": "[EDU] ML in Production Talk", "category": "Public Speaking", "date": "11-Dec-2025", "points": 32 },
+        { "name": "[EDU] Feature Engineering Workshop", "category": "Education", "date": "09-Oct-2025", "points": 48 },
+        { "name": "[EDU] University AI Lecture", "category": "University Partnership", "date": "16-Jun-2025", "points": 40 }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Monika Wisniewska",
+      "role": "Scrum Master (PL.U1.G1)",
+      "activities": [
+        { "name": "[EDU] Agile Coaching Session", "category": "Education", "date": "07-Jan-2026", "points": 24 },
+        { "name": "[EDU] Sprint Planning Masterclass", "category": "Public Speaking", "date": "03-Nov-2025", "points": 16 },
+        { "name": "[EDU] University Agile Talk", "category": "University Partnership", "date": "10-Mar-2025", "points": 20 }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Lucas Ferreira",
+      "role": "Mobile Developer (BR.U1.D2.G1)",
+      "activities": [
+        { "name": "[EDU] React Native Workshop", "category": "Education", "date": "24-Feb-2026", "points": 32 },
+        { "name": "[EDU] App Performance Talk", "category": "Public Speaking", "date": "19-Nov-2025", "points": 16 }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Hana Park",
+      "role": "Security Engineer (KR.U1.D1.G1)",
+      "activities": [
+        { "name": "[EDU] OWASP Top 10 Workshop", "category": "Education", "date": "03-Dec-2025", "points": 48 },
+        { "name": "[EDU] Secure Code Review Talk", "category": "Public Speaking", "date": "22-Oct-2025", "points": 32 },
+        { "name": "[EDU] Threat Modeling Session", "category": "Education", "date": "17-Jul-2025", "points": 24 }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Felix Andersen",
+      "role": "Cloud Architect (DK.U1.G1)",
+      "activities": [
+        { "name": "[EDU] AWS Cost Optimization Talk", "category": "Public Speaking", "date": "13-Mar-2026", "points": 16 },
+        { "name": "[EDU] Infrastructure as Code Workshop", "category": "Education", "date": "28-Jan-2026", "points": 32 },
+        { "name": "[EDU] University Cloud Workshop", "category": "University Partnership", "date": "09-Apr-2025", "points": 20 }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Aiko Yamamoto",
+      "role": "Senior Software Engineer (JP.U2.D1.G1)",
+      "activities": [
+        { "name": "[EDU] TypeScript Advanced Patterns", "category": "Education", "date": "06-Nov-2025", "points": 32 },
+        { "name": "[EDU] Code Review Culture Talk", "category": "Public Speaking", "date": "25-Aug-2025", "points": 16 }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Miguel Herrera",
+      "role": "Backend Engineer (ES.U1.D1.G2)",
+      "activities": [
+        { "name": "[EDU] Kafka Fundamentals Workshop", "category": "Education", "date": "02-Apr-2026", "points": 40 },
+        { "name": "[EDU] Event-Driven Architecture Talk", "category": "Public Speaking", "date": "17-Feb-2026", "points": 16 }
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Ingrid Holm",
+      "role": "HR Business Partner (NO.U1.G1)",
+      "activities": [
+        { "name": "[EDU] Employer Branding Talk", "category": "Public Speaking", "date": "12-Nov-2025", "points": 16 },
+        { "name": "[EDU] University Recruitment Event", "category": "University Partnership", "date": "21-May-2025", "points": 20 },
+        { "name": "[EDU] Onboarding Best Practices", "category": "Education", "date": "08-Feb-2025", "points": 16 }
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Omar Benali",
+      "role": "Full Stack Engineer (MA.U1.D2.G1)",
+      "activities": [
+        { "name": "[EDU] Vue.js Workshop", "category": "Education", "date": "09-Dec-2025", "points": 24 },
+        { "name": "[EDU] Node.js Performance Talk", "category": "Public Speaking", "date": "14-Aug-2025", "points": 16 },
+        { "name": "[EDU] Open Source Day Talk", "category": "Public Speaking", "date": "22-May-2025", "points": 8 }
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Natasha Ivanova",
+      "role": "Technical Writer (BG.U1.G1)",
+      "activities": [
+        { "name": "[EDU] Docs-as-Code Workshop", "category": "Education", "date": "17-Nov-2025", "points": 24 },
+        { "name": "[EDU] API Documentation Talk", "category": "Public Speaking", "date": "06-Jun-2025", "points": 16 }
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Tobias Schulz",
+      "role": "Platform Engineer (DE.U1.D1.G1)",
+      "activities": [
+        { "name": "[EDU] Helm Charts Workshop", "category": "Education", "date": "20-Jan-2026", "points": 32 },
+        { "name": "[EDU] GitOps Talk", "category": "Public Speaking", "date": "04-Dec-2025", "points": 16 },
+        { "name": "[EDU] University DevOps Lecture", "category": "University Partnership", "date": "30-Sep-2025", "points": 20 }
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Valentina Cruz",
+      "role": "QA Lead (AR.U1.D1.G1.T1)",
+      "activities": [
+        { "name": "[EDU] Test Strategy Workshop", "category": "Education", "date": "25-Mar-2026", "points": 32 },
+        { "name": "[EDU] Performance Testing Talk", "category": "Public Speaking", "date": "11-Feb-2026", "points": 16 }
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Kwame Mensah",
+      "role": "Software Engineer (GH.U1.D2.G1)",
+      "activities": [
+        { "name": "[EDU] Go Language Workshop", "category": "Education", "date": "19-Aug-2025", "points": 24 },
+        { "name": "[EDU] Concurrency Patterns Talk", "category": "Public Speaking", "date": "07-Jul-2025", "points": 16 }
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Anastasia Novak",
+      "role": "Senior Data Analyst (CZ.U1.G2)",
+      "activities": [
+        { "name": "[EDU] BI Dashboards Workshop", "category": "Education", "date": "28-Oct-2025", "points": 24 },
+        { "name": "[EDU] University Data Science Talk", "category": "University Partnership", "date": "03-Jun-2025", "points": 20 },
+        { "name": "[EDU] SQL Optimization Talk", "category": "Public Speaking", "date": "15-Mar-2025", "points": 16 }
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Arjun Mehta",
+      "role": "Engineering Manager (IN.U3.G1)",
+      "activities": [
+        { "name": "[EDU] Team Topologies Talk", "category": "Public Speaking", "date": "04-Nov-2025", "points": 32 },
+        { "name": "[EDU] Inner Source Workshop", "category": "Education", "date": "30-Jul-2025", "points": 24 }
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Sara Johansson",
+      "role": "Frontend Engineer (SE.U1.D2.G1)",
+      "activities": [
+        { "name": "[EDU] Web Performance Workshop", "category": "Education", "date": "15-Apr-2026", "points": 32 },
+        { "name": "[EDU] Svelte Introduction Talk", "category": "Public Speaking", "date": "10-Jan-2026", "points": 16 }
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Bogdan Popovici",
+      "role": "DevOps Lead (RO.U1.G1)",
+      "activities": [
+        { "name": "[EDU] Observability Workshop", "category": "Education", "date": "21-Oct-2025", "points": 40 },
+        { "name": "[EDU] SLO/SLI Talk", "category": "Public Speaking", "date": "12-Aug-2025", "points": 16 }
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Chioma Eze",
+      "role": "Product Designer (NG.U1.G1)",
+      "activities": [
+        { "name": "[EDU] Design Critique Workshop", "category": "Education", "date": "05-Jun-2025", "points": 24 },
+        { "name": "[EDU] University UX Mentoring", "category": "University Partnership", "date": "28-Feb-2025", "points": 20 }
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Ivan Petrov",
+      "role": "Senior Engineer (BG.U1.D1.G1)",
+      "activities": [
+        { "name": "[EDU] Rust Workshop", "category": "Education", "date": "02-Sep-2025", "points": 32 },
+        { "name": "[EDU] Memory Safety Talk", "category": "Public Speaking", "date": "18-Jun-2025", "points": 16 }
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Mei Lin",
+      "role": "Backend Engineer (CN.U1.D1.G2)",
+      "activities": [
+        { "name": "[EDU] Spring Boot Workshop", "category": "Education", "date": "23-Nov-2024", "points": 32 },
+        { "name": "[EDU] JVM Tuning Talk", "category": "Public Speaking", "date": "15-Oct-2024", "points": 16 },
+        { "name": "[EDU] University Java Lecture", "category": "University Partnership", "date": "10-Apr-2024", "points": 20 }
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Andrei Georgescu",
+      "role": "Software Architect (RO.U2.G1)",
+      "activities": [
+        { "name": "[EDU] DDD Workshop", "category": "Education", "date": "14-Dec-2024", "points": 48 },
+        { "name": "[EDU] Hexagonal Architecture Talk", "category": "Public Speaking", "date": "20-Sep-2024", "points": 32 },
+        { "name": "[EDU] CQRS Workshop", "category": "Education", "date": "05-Jun-2024", "points": 24 }
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Fatou Diallo",
+      "role": "Marketing Specialist (SN.U1.G1)",
+      "activities": [
+        { "name": "[EDU] Growth Hacking Talk", "category": "Public Speaking", "date": "08-Nov-2024", "points": 16 },
+        { "name": "[EDU] University Partnership Event", "category": "University Partnership", "date": "25-Mar-2024", "points": 20 }
+      ]
+    },
+    {
+      "id": 38,
+      "name": "Piotr Kowalski",
+      "role": "Senior Engineer (PL.U1.D2.G1)",
+      "activities": [
+        { "name": "[EDU] .NET Blazor Workshop", "category": "Education", "date": "17-Jul-2024", "points": 32 },
+        { "name": "[EDU] C# Best Practices Talk", "category": "Public Speaking", "date": "11-Feb-2024", "points": 16 }
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Aigerim Bekova",
+      "role": "Frontend Developer (KZ.U1.D1.G1)",
+      "activities": [
+        { "name": "[EDU] Angular Workshop", "category": "Education", "date": "22-Aug-2024", "points": 24 },
+        { "name": "[EDU] RxJS Deep Dive Talk", "category": "Public Speaking", "date": "14-May-2024", "points": 16 }
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Seun Adeyemi",
+      "role": "Data Engineer (NG.U1.D1.G1)",
+      "activities": [
+        { "name": "[EDU] Spark Streaming Workshop", "category": "Education", "date": "09-Oct-2024", "points": 32 },
+        { "name": "[EDU] Data Lake Architecture Talk", "category": "Public Speaking", "date": "19-Jun-2024", "points": 16 },
+        { "name": "[EDU] University Data Engineering Talk", "category": "University Partnership", "date": "15-Jan-2024", "points": 20 }
+      ]
+    },
+    {
+      "id": 41,
+      "name": "Katarzyna Nowak",
+      "role": "Business Analyst (PL.U2.G1)",
+      "activities": [
+        { "name": "[EDU] Process Mapping Workshop", "category": "Education", "date": "30-Apr-2024", "points": 24 },
+        { "name": "[EDU] University BA Lecture", "category": "University Partnership", "date": "12-Nov-2024", "points": 20 }
+      ]
+    },
+    {
+      "id": 42,
+      "name": "Rafael Moreno",
+      "role": "Software Engineer (CO.U1.D1.G1)",
+      "activities": [
+        { "name": "[EDU] Kotlin Workshop", "category": "Education", "date": "26-Mar-2024", "points": 24 },
+        { "name": "[EDU] Android Architecture Talk", "category": "Public Speaking", "date": "07-Aug-2024", "points": 16 }
+      ]
+    }
+  ]
+}

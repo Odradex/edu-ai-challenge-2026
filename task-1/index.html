@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaderboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-wrapper">
+  <header class="lb-header">
+    <div class="lb-header-content">
+      <h2>Leaderboard</h2>
+      <p>Top performers based on contributions and activity</p>
+    </div>
+  </header>
+
+  <div class="filter-bar">
+    <div class="filters">
+      <select id="filter-year" class="filter-select">
+        <option value="">All Years</option>
+      </select>
+      <select id="filter-quarter" class="filter-select">
+        <option value="">All Quarters</option>
+        <option value="1">Q1</option>
+        <option value="2">Q2</option>
+        <option value="3">Q3</option>
+        <option value="4">Q4</option>
+      </select>
+      <select id="filter-category" class="filter-select">
+        <option value="">All Categories</option>
+      </select>
+    </div>
+    <div class="search-box">
+      <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="search" type="search" placeholder="Search employee..." autocomplete="off">
+    </div>
+  </div>
+
+  <div class="podium" id="podium"></div>
+  <div class="list" id="list"></div>
+
+  <script>
+    const AVATAR_COLORS = ['#6366f1','#0ea5e9','#10b981','#f59e0b','#ef4444','#8b5cf6','#14b8a6','#f97316'];
+
+    const CATEGORY_ICONS = {
+      'Public Speaking': `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
+      'Education': `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>`,
+      'University Partnership': `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>`,
+    };
+    const DEFAULT_ICON = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>`;
+    const CHEVRON_DOWN = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+    const CHEVRON_UP   = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 10l4-4 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+    function initials(name) {
+      return name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+    }
+
+    function avatarColor(name) {
+      let h = 0;
+      for (const c of name) h = (h * 31 + c.charCodeAt(0)) & 0xffffffff;
+      return AVATAR_COLORS[Math.abs(h) % AVATAR_COLORS.length];
+    }
+
+    function totalScore(user) {
+      return user.activities.reduce((s, a) => s + a.points, 0);
+    }
+
+    function categoryStats(user) {
+      const counts = {};
+      for (const a of user.activities) counts[a.category] = (counts[a.category] || 0) + 1;
+      return counts;
+    }
+
+    function renderPodium(top3) {
+      const order = [top3[1], top3[0], top3[2]];
+      const ranks = [2, 1, 3];
+      return order.map((user, i) => {
+        const rank = ranks[i];
+        const score = totalScore(user);
+        const color = avatarColor(user.name);
+        return `
+          <div class="podium-col rank-${rank}">
+            <div class="podium-user">
+              <div class="podium-avatar-wrap">
+                <div class="podium-avatar" style="background-color:${color};">${initials(user.name)}</div>
+                <div class="podium-badge">${rank}</div>
+              </div>
+              <h3 class="podium-name">${user.name}</h3>
+              <p class="podium-role">${user.role}</p>
+              <div class="podium-score"><span class="star">★</span><span>${score}</span></div>
+            </div>
+            <div class="podium-block">
+              <span class="podium-block-num">${rank}</span>
+            </div>
+          </div>`;
+      }).join('');
+    }
+
+    function renderList(sorted) {
+      return sorted.map((user, i) => {
+        const rank = i + 1;
+        const score = totalScore(user);
+        const color = avatarColor(user.name);
+        const stats = categoryStats(user);
+
+        const statsHtml = Object.entries(stats).map(([cat, count]) => `
+          <div class="category-stat">
+            ${CATEGORY_ICONS[cat] || DEFAULT_ICON}
+            <span class="category-stat-count">${count}</span>
+          </div>`).join('');
+
+        const activitiesHtml = user.activities.map(a => `
+          <tr>
+            <td class="activity-name">${a.name}</td>
+            <td><span class="category-badge">${a.category}</span></td>
+            <td class="activity-date">${a.date}</td>
+            <td class="activity-points">+${a.points}</td>
+          </tr>`).join('');
+
+        return `
+          <div class="user-row" id="user-${user.id}">
+            <div class="row">
+              <div class="row-main">
+                <div class="row-left">
+                  <span class="rank">${rank}</span>
+                  <div class="avatar" style="background-color:${color};">${initials(user.name)}</div>
+                  <div class="info">
+                    <h3 class="name">${user.name}</h3>
+                    <span class="role">${user.role}</span>
+                  </div>
+                </div>
+                <div class="row-right">
+                  <div class="category-stats">${statsHtml}</div>
+                  <div class="total-section">
+                    <span class="total-label">TOTAL</span>
+                    <div class="score"><span class="star">★</span><span>${score}</span></div>
+                  </div>
+                  <button class="expand-btn" aria-label="Expand" onclick="toggleRow(${user.id})">${CHEVRON_DOWN}</button>
+                </div>
+              </div>
+            </div>
+            <div class="details">
+              <h4 class="details-title">RECENT ACTIVITY</h4>
+              <div class="table-wrapper">
+                <table class="activity-table">
+                  <thead><tr><th>Activity</th><th>Category</th><th>Date</th><th>Points</th></tr></thead>
+                  <tbody>${activitiesHtml}</tbody>
+                </table>
+              </div>
+            </div>
+          </div>`;
+      }).join('');
+    }
+
+    function toggleRow(id) {
+      const row = document.getElementById(`user-${id}`);
+      const expanded = row.classList.toggle('expanded');
+      const btn = row.querySelector('.expand-btn');
+      btn.innerHTML = expanded ? CHEVRON_UP : CHEVRON_DOWN;
+      btn.setAttribute('aria-label', expanded ? 'Collapse' : 'Expand');
+    }
+
+    const QUARTER_MONTHS = { '1': [0,1,2], '2': [3,4,5], '3': [6,7,8], '4': [9,10,11] };
+
+    function parseDate(str) {
+      // format: DD-Mon-YYYY
+      return new Date(str.replace(/-/g, ' '));
+    }
+
+    function filterActivities(activities, year, quarter, category) {
+      return activities.filter(a => {
+        const d = parseDate(a.date);
+        if (year && d.getFullYear() !== parseInt(year)) return false;
+        if (quarter && !QUARTER_MONTHS[quarter].includes(d.getMonth())) return false;
+        if (category && a.category !== category) return false;
+        return true;
+      });
+    }
+
+    function applyFilters() {
+      const year     = document.getElementById('filter-year').value;
+      const quarter  = document.getElementById('filter-quarter').value;
+      const category = document.getElementById('filter-category').value;
+      const search   = document.getElementById('search').value.trim().toLowerCase();
+
+      let filtered = allUsers
+        .map(u => ({ ...u, activities: filterActivities(u.activities, year, quarter, category) }))
+        .filter(u => u.activities.length > 0)
+        .filter(u => !search || u.name.toLowerCase().includes(search));
+
+      filtered.sort((a, b) => totalScore(b) - totalScore(a));
+
+      document.getElementById('podium').innerHTML = filtered.length >= 3 ? renderPodium(filtered) : '';
+      document.getElementById('list').innerHTML = renderList(filtered);
+    }
+
+    let allUsers = [];
+
+    fetch('data.json')
+      .then(r => r.json())
+      .then(({ users }) => {
+        allUsers = users;
+
+        // Populate year dropdown from data
+        const years = [...new Set(users.flatMap(u => u.activities.map(a => parseDate(a.date).getFullYear())))].sort((a,b) => b - a);
+        const yearSel = document.getElementById('filter-year');
+        years.forEach(y => { const o = document.createElement('option'); o.value = y; o.textContent = y; yearSel.appendChild(o); });
+
+        // Populate category dropdown from data
+        const cats = [...new Set(users.flatMap(u => u.activities.map(a => a.category)))].sort();
+        const catSel = document.getElementById('filter-category');
+        cats.forEach(c => { const o = document.createElement('option'); o.value = c; o.textContent = c; catSel.appendChild(o); });
+
+        ['filter-year','filter-quarter','filter-category'].forEach(id => {
+          document.getElementById(id).addEventListener('change', applyFilters);
+        });
+        document.getElementById('search').addEventListener('input', applyFilters);
+
+        applyFilters();
+      });
+  </script>
+  </div>
+</body>
+</html>
